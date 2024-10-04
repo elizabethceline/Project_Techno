@@ -23,7 +23,7 @@
 
     :root {
         --bg: #f9f9f9;
-        --yellow: #efc14e;
+        --yellow: #dea81c;
         --danger: #701210;
         --success: #00cc66;
         --text: #333;
@@ -36,7 +36,6 @@
         --first-color-alt: hsl(var(--hue), var(--sat), 36%);
         --title-color: hsl(var(--hue), 12%, 15%);
         --text-color: hsl(var(--hue), 8%, 35%);
-        --body-color: hsl(var(--hue), 100%, 99%);
         --container-color: #fff;
 
         --body-font: "Open Sans", sans-serif;
@@ -68,8 +67,14 @@
         margin: var(--header-height) 0 0 0;
         font-family: var(--body-font);
         font-size: var(--normal-font-size);
-        background-color: var(--body-color);
         color: var(--text-color);
+        line-height: 1.25rem;
+    }
+
+    .title {
+        font-size: var(--h1-font-size);
+        color: var(--title-color);
+        line-height: 2rem;
     }
 
     ul {
