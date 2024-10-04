@@ -1,5 +1,5 @@
-<header class="header" id="header">
-    <nav class="nav container1">
+<header class="header flex flex-col items-center" id="header">
+    <nav class="nav container1 w-[80%] lg:w-full">
         <a href="#" class="nav__logo">EduRide</a>
 
         <div class="nav__menu" id="nav-menu">

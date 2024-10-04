@@ -33,6 +33,8 @@
             <div class="text-center mt-[1.6rem]">Don’t have an account yet? <a class="text-[var(--yellow)]" href="#">Sign up for free!</a></div>
         </div>
     </section>
+
+    <?php include 'include/script.php'; ?>
 </body>
 
 </html>
