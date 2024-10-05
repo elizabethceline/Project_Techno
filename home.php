@@ -8,16 +8,36 @@
     <link rel="stylesheet" href="assets/css/navbar.css">
 
     <style>
-        input[type="range"] {
-            -webkit-appearance: none;
-            appearance: none;
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 10px;
+        }
+
+        .slider-track {
+            position: absolute;
             width: 100%;
             height: 10px;
             background: #e5e7eb;
             border-radius: 5px;
-            cursor: pointer;
+        }
+
+        .slider-range {
+            position: absolute;
+            height: 10px;
+            background: var(--yellow2);
+            border-radius: 5px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: transparent;
+            pointer-events: none;
             outline: none;
-            padding: 0;
         }
 
         input[type="range"]::-webkit-slider-thumb {
@@ -25,19 +45,47 @@
             appearance: none;
             width: 15px;
             height: 15px;
-            background: #fcd34d;
+            background: var(--yellow2);
             border-radius: 50%;
             cursor: pointer;
+            pointer-events: auto;
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            border: none;
+            outline: none;
         }
 
         input[type="range"]::-moz-range-thumb {
             width: 15px;
             height: 15px;
-            background: #fcd34d;
+            background: var(--yellow2);
             border-radius: 50%;
             cursor: pointer;
+            pointer-events: auto;
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            border: none;
+            outline: none;
+        }
+
+        input[type="range"]:focus::-webkit-slider-thumb {
+            background: var(--yellow2);
+        }
+
+        input[type="range"]:active::-webkit-slider-thumb {
+            background: var(--yellow2);
+        }
+
+        input[type="range"]:focus::-moz-range-thumb {
+            background: var(--yellow2);
+        }
+
+        input[type="range"]:active::-moz-range-thumb {
+            background: var(--yellow2);
+        }
+
+        .price-values {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
         }
     </style>
 </head>
@@ -132,16 +180,17 @@
 
             <div class="relative flex flex-col items-stretch mt-2">
                 <h2 class="mb-2">Range Harga</h2>
-                <div class="w-full border border-white bg-white rounded-md shadow-sm pl-3 pr-3 py-2 mb-3 text-left relative cursor-pointer">
-                    <input id="rangeHarga" type="range" min="0" max="2000000" step="50000" value="1000000"
-                        class="w-full appearance-none bg-transparent h-2 focus:outline-none focus:ring-1 focus:ring-[var(--yellow)] focus:border-[var(--yellow)]">
-                    <div class="flex justify-between text-sm mt-2">
-                        <span id="minHarga" class="block truncate">Rp 0</span>
-                        <span id="maxHarga" class="block truncate">Rp 1,000,000</span>
-                    </div>
+                <div class="slider-container">
+                    <div class="slider-track"></div>
+                    <div class="slider-range" id="sliderRange"></div>
+                    <input id="sliderMin" type="range" min="0" max="2000000" step="50000" value="0">
+                    <input id="sliderMax" type="range" min="0" max="2000000" step="50000" value="2000000">
+                </div>
+                <div class="price-values mt-2">
+                    <span id="minPrice">Rp0</span>
+                    <span id="maxPrice">Rp2.000.000</span>
                 </div>
             </div>
-
 
         </div>
 
@@ -150,89 +199,110 @@
     <?php include "include/script.php"; ?>
 
     <script>
-        setupDropdown('Sekolah');
-        setupDropdown('Lokasi');
+        document.addEventListener('DOMContentLoaded', function() {
+            setupDropdown('Sekolah');
+            setupDropdown('Lokasi');
 
-        function setupDropdown(type) {
-            const dropdownButton = document.getElementById(`dropdownButton${type}`);
-            const dropdownMenu = document.getElementById(`dropdownMenu${type}`);
-            const checkboxes = dropdownMenu.querySelectorAll('input[type="checkbox"]:not(#selectAll' + type + ')');
-            const selectAllCheckbox = document.getElementById('selectAll' + type);
-            const placeholder = document.getElementById(`dropdownPlaceholder${type}`);
-            const searchInput = document.getElementById(`searchInput${type}`);
+            function setupDropdown(type) {
+                const dropdownButton = document.getElementById(`dropdownButton${type}`);
+                const dropdownMenu = document.getElementById(`dropdownMenu${type}`);
+                const checkboxes = dropdownMenu.querySelectorAll('input[type="checkbox"]:not(#selectAll' + type + ')');
+                const selectAllCheckbox = document.getElementById('selectAll' + type);
+                const placeholder = document.getElementById(`dropdownPlaceholder${type}`);
+                const searchInput = document.getElementById(`searchInput${type}`);
 
-            dropdownButton.addEventListener('click', function() {
-                dropdownMenu.classList.toggle('hidden');
-            });
-
-            selectAllCheckbox.addEventListener('change', function() {
-                checkboxes.forEach(function(checkbox) {
-                    checkbox.checked = selectAllCheckbox.checked;
+                dropdownButton.addEventListener('click', function() {
+                    dropdownMenu.classList.toggle('hidden');
                 });
-                updatePlaceholder();
-            });
 
-            checkboxes.forEach(function(checkbox) {
-                checkbox.addEventListener('change', function() {
-                    if (!checkbox.checked) {
-                        selectAllCheckbox.checked = false;
-                    } else if (Array.from(checkboxes).every(i => i.checked)) {
-                        selectAllCheckbox.checked = true;
-                    }
+                selectAllCheckbox.addEventListener('change', function() {
+                    checkboxes.forEach(function(checkbox) {
+                        checkbox.checked = selectAllCheckbox.checked;
+                    });
                     updatePlaceholder();
                 });
-            });
 
-            function updatePlaceholder() {
-                const selectedOptions = Array.from(checkboxes).filter(i => i.checked).map(i => {
-                    const label = i.parentElement.querySelector('span');
-                    return label.textContent.trim();
+                checkboxes.forEach(function(checkbox) {
+                    checkbox.addEventListener('change', function() {
+                        if (!checkbox.checked) {
+                            selectAllCheckbox.checked = false;
+                        } else if (Array.from(checkboxes).every(i => i.checked)) {
+                            selectAllCheckbox.checked = true;
+                        }
+                        updatePlaceholder();
+                    });
                 });
 
-                if (selectedOptions.length) {
-                    const selectedText = selectedOptions.join(', ');
-                    placeholder.textContent = selectedText;
+                function updatePlaceholder() {
+                    const selectedOptions = Array.from(checkboxes).filter(i => i.checked).map(i => {
+                        const label = i.parentElement.querySelector('span');
+                        return label.textContent.trim();
+                    });
 
-                    if (placeholder.scrollWidth > placeholder.clientWidth) {
-                        placeholder.textContent = `${selectedOptions.length} options selected`;
+                    if (selectedOptions.length) {
+                        const selectedText = selectedOptions.join(', ');
+                        placeholder.textContent = selectedText;
+
+                        if (placeholder.scrollWidth > placeholder.clientWidth) {
+                            placeholder.textContent = `${selectedOptions.length} options selected`;
+                        }
+                    } else {
+                        placeholder.textContent = `Select ${type}`;
                     }
-                } else {
-                    placeholder.textContent = `Select ${type}`;
                 }
+
+                searchInput.addEventListener('input', function() {
+                    const filter = searchInput.value.toLowerCase();
+                    const labels = dropdownMenu.querySelectorAll('label');
+
+                    labels.forEach(function(label) {
+                        const text = label.textContent.toLowerCase();
+                        if (text.includes(filter)) {
+                            label.style.display = '';
+                        } else {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                });
             }
 
-            searchInput.addEventListener('input', function() {
-                const filter = searchInput.value.toLowerCase();
-                const labels = dropdownMenu.querySelectorAll('label');
+            const sliderMin = document.getElementById('sliderMin');
+            const sliderMax = document.getElementById('sliderMax');
+            const sliderRange = document.getElementById('sliderRange');
+            const minPriceDisplay = document.getElementById('minPrice');
+            const maxPriceDisplay = document.getElementById('maxPrice');
+            const min = parseInt(sliderMin.min);
+            const max = parseInt(sliderMax.max);
 
-                labels.forEach(function(label) {
-                    const text = label.textContent.toLowerCase();
-                    if (text.includes(filter)) {
-                        label.style.display = '';
-                    } else {
-                        label.style.display = 'none';
-                    }
-                });
-            });
+            function updateSlider() {
+                const minVal = parseInt(sliderMin.value);
+                const maxVal = parseInt(sliderMax.value);
 
-            document.addEventListener('click', function(event) {
-                if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                    dropdownMenu.classList.add('hidden');
+                if (minVal > maxVal) {
+                    sliderMin.value = maxVal;
+                } else if (maxVal < minVal) {
+                    sliderMax.value = minVal;
                 }
-            });
-        }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const rangeInput = document.getElementById('rangeHarga');
-            const minHargaDisplay = document.getElementById('minHarga');
-            const maxHargaDisplay = document.getElementById('maxHarga');
+                const percentMin = ((sliderMin.value - min) / (max - min)) * 100;
+                const percentMax = ((sliderMax.value - min) / (max - min)) * 100;
+                sliderRange.style.left = `${percentMin}%`;
+                sliderRange.style.right = `${100 - percentMax}%`;
 
-            rangeInput.addEventListener('input', function() {
-                const selectedValue = parseInt(rangeInput.value, 10);
+                minPriceDisplay.textContent = `Rp${parseInt(sliderMin.value).toLocaleString('id-ID')}`;
+                maxPriceDisplay.textContent = `Rp${parseInt(sliderMax.value).toLocaleString('id-ID')}`;
+            }
 
-                minHargaDisplay.textContent = 'Rp 0';
-                maxHargaDisplay.textContent = `Rp ${selectedValue.toLocaleString()}`;
-            });
+            updateSlider();
+
+            sliderMin.addEventListener('input', updateSlider);
+            sliderMax.addEventListener('input', updateSlider);
         });
     </script>
 </body>

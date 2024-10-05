@@ -19,6 +19,7 @@
     :root {
         --bg: #f9f9f9;
         --yellow: #dea81c;
+        --yellow2: #fcd34d;
         --danger: #701210;
         --success: #00cc66;
         --text: #333;
