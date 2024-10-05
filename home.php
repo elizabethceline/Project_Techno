@@ -199,7 +199,7 @@
                 <div class="relative overflow-hidden bg-cover bg-no-repeat">
                     <img
                         class="rounded-t-lg"
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
+                        src="https://antarjemputsekolahsurabaya.wordpress.com/wp-content/uploads/2014/12/brosur-antar-jemput-sekolah-surabaya.jpg"
                         alt="" />
                 </div>
                 <div class="p-2">
