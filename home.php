@@ -92,8 +92,8 @@
 
 <body>
     <?php include 'include/navbar.php'; ?>
-    <section class="bg-neutral-100 w-screen min-h-screen h-fit flex flex-col py-20 lg:py-24 items-center">
-        <div class="w-[80%] lg:grid grid-cols-3 gap-6">
+    <section class="bg-neutral-100 w-screen min-h-screen h-fit flex flex-col pt-16 pb-24 lg:py-24 items-center">
+        <div class="w-[90%] lg:grid grid-cols-3 gap-6">
             <div class="relative flex flex-col items-stretch mt-2">
                 <h2 class="mb-2">Sekolah</h2>
                 <button id="dropdownButtonSekolah" type="button"
@@ -161,19 +161,19 @@
                         <span class="ml-3 block truncate text-black whitespace-normal">Select All</span>
                     </label>
                     <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="lokasi[]" value="Surabaya Barat"
+                        <input type="checkbox" name="lokasi[]" value="Sukomanunggal"
                             class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Surabaya Barat</span>
+                        <span class="ml-3 block truncate text-black whitespace-normal">Sukomanunggal</span>
                     </label>
                     <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="lokasi[]" value="Surabaya Timur"
+                        <input type="checkbox" name="lokasi[]" value="Sambikerep"
                             class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Surabaya Timur</span>
+                        <span class="ml-3 block truncate text-black whitespace-normal">Sambikerep</span>
                     </label>
                     <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="lokasi[]" value="Surabaya Utara"
+                        <input type="checkbox" name="lokasi[]" value="Lakarsantri"
                             class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Surabaya Utara</span>
+                        <span class="ml-3 block truncate text-black whitespace-normal">Lakarsantri</span>
                     </label>
                 </div>
             </div>
@@ -191,7 +191,77 @@
                     <span id="maxPrice">Rp2.000.000</span>
                 </div>
             </div>
+        </div>
 
+        <div class="w-[90%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-6">
+            <div
+                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
+                <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                    <img
+                        class="rounded-t-lg"
+                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
+                        alt="" />
+                </div>
+                <div class="p-2">
+                    <p class="font-bold truncate">
+                        Antar Jemput XYZ
+                    </p>
+                    <p class="text-xs">SD Kristen Petra 1</p>
+                    <p class="font-bold mt-2 text-success">Rp500.000</p>
+                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sambikerep, Lakarsantri</p>
+                </div>
+            </div>
+            <div
+                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
+                <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                    <img
+                        class="rounded-t-lg"
+                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
+                        alt="" />
+                </div>
+                <div class="p-2">
+                    <p class="font-bold truncate">
+                        Antar Jemput ABC
+                    </p>
+                    <p class="text-xs">SD Kristen Petra 1</p>
+                    <p class="font-bold mt-2 text-success">Rp450.000</p>
+                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sukomanunggal</p>
+                </div>
+            </div>
+            <div
+                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
+                <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                    <img
+                        class="rounded-t-lg"
+                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
+                        alt="" />
+                </div>
+                <div class="p-2">
+                    <p class="font-bold truncate">
+                        Antar Jemput XYZ
+                    </p>
+                    <p class="text-xs">SD Kristen Petra 1</p>
+                    <p class="font-bold mt-2 text-success">Rp500.000</p>
+                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sambikerep, Lakarsantri</p>
+                </div>
+            </div>
+            <div
+                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
+                <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                    <img
+                        class="rounded-t-lg"
+                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
+                        alt="" />
+                </div>
+                <div class="p-2">
+                    <p class="font-bold truncate">
+                        Antar Jemput ABC
+                    </p>
+                    <p class="text-xs">SD Kristen Petra 1</p>
+                    <p class="font-bold mt-2 text-success">Rp450.000</p>
+                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sukomanunggal</p>
+                </div>
+            </div>
         </div>
 
     </section>
