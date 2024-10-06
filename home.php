@@ -193,8 +193,8 @@
             </div>
         </div>
 
-        <div class="w-[90%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-6">
-            <div
+        <div id="list-anjem" class="w-[90%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-6">
+            <!-- <div
                 class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
                 <div class="relative overflow-hidden bg-cover bg-no-repeat">
                     <img
@@ -261,7 +261,7 @@
                     <p class="font-bold mt-2 text-success">Rp450.000</p>
                     <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sukomanunggal</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
     </section>
@@ -269,9 +269,87 @@
     <?php include "include/script.php"; ?>
 
     <script>
+        const ANJEMS = [{
+                name: 'Antar Jemput XYZ',
+                school: 'SD Kristen Petra 1',
+                location: 'Sambikerep',
+                price: 500000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput ABC',
+                school: 'SD Kristen Petra 1',
+                location: 'Sukomanunggal',
+                price: 450000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput EFG',
+                school: 'SD Kristen Petra 10',
+                location: 'Sambikerep',
+                price: 500000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput QRS',
+                school: 'SD Kristen Petra 11',
+                location: 'Lakarsantri',
+                price: 600000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            }
+        ];
+        var filterSchool = [];
+        var filterLocation = [];
+        var minPrice = 0;
+        var maxPrice = 2000000;
+
         document.addEventListener('DOMContentLoaded', function() {
             setupDropdown('Sekolah');
             setupDropdown('Lokasi');
+            showAnjem(ANJEMS);
+
+            function showAnjem(anjems) {
+                if (anjems) {
+                    const listAnjem = document.getElementById('list-anjem');
+                    listAnjem.innerHTML = '';
+                    anjems.forEach(anjem => {
+                        const format = new Intl.NumberFormat('id-ID', {
+                            style: 'currency',
+                            currency: 'IDR'
+                        });
+                        listAnjem.insertAdjacentHTML('beforeend', `<div
+                                                    class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
+                                                    <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                                                        <img
+                                                            class="rounded-t-lg"
+                                                            src="${anjem.img}"
+                                                            alt="" />
+                                                    </div>
+                                                    <div class="p-2">
+                                                        <p class="font-bold truncate">${anjem.name}</p>
+                                                        <p class="text-xs">${anjem.school}</p>
+                                                        <p class="font-bold mt-2 text-success">${format.format(anjem.price)}</p>
+                                                        <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> ${anjem.location}</p>
+                                                    </div>
+                                                </div>`)
+                    });
+                }
+            }
+
+            function getAnjemByFilter() {
+                console.log(filterSchool);
+                console.log(filterLocation);
+                
+                
+                return ANJEMS.filter(anjem => {
+                    const schoolMatches = filterSchool.length > 0 ? filterSchool.includes(anjem.school) : true;
+                    const locationMatches = filterLocation.length > 0 ? filterLocation.includes(anjem.location) : true;
+                    const minPriceMatches = anjem.price >= minPrice;
+                    const maxPriceMatches = anjem.price <= maxPrice;
+
+                    return schoolMatches && locationMatches && minPriceMatches && maxPriceMatches;
+                });
+            }
 
             function setupDropdown(type) {
                 const dropdownButton = document.getElementById(`dropdownButton${type}`);
@@ -286,20 +364,34 @@
                 });
 
                 selectAllCheckbox.addEventListener('change', function() {
+                    if (type == 'Sekolah') 
+                        filterSchool = [];
+                    else if (type == 'Lokasi') 
+                        filterLocation = [];
                     checkboxes.forEach(function(checkbox) {
                         checkbox.checked = selectAllCheckbox.checked;
+                        if (checkbox.checked) {
+                            addFilter(checkbox.parentElement.querySelector('span').textContent.trim());
+                        } else {
+                            removeFilter(checkbox.parentElement.querySelector('span').textContent.trim());
+                        }
                     });
                     updatePlaceholder();
+                    showAnjem(getAnjemByFilter());
                 });
 
                 checkboxes.forEach(function(checkbox) {
                     checkbox.addEventListener('change', function() {
                         if (!checkbox.checked) {
                             selectAllCheckbox.checked = false;
+                            removeFilter(checkbox.parentElement.querySelector('span').textContent.trim());
                         } else if (Array.from(checkboxes).every(i => i.checked)) {
                             selectAllCheckbox.checked = true;
+                        } else {
+                            addFilter(checkbox.parentElement.querySelector('span').textContent.trim());
                         }
                         updatePlaceholder();
+                        showAnjem(getAnjemByFilter());
                     });
                 });
 
@@ -318,6 +410,22 @@
                         }
                     } else {
                         placeholder.textContent = `Select ${type}`;
+                    }
+                }
+
+                function removeFilter(filter) {
+                    if (type == 'Sekolah') {
+                        filterSchool.pop(filter);
+                    } else if (type == 'Lokasi') {
+                        filterLocation.pop(filter);
+                    }
+                }
+
+                function addFilter(filter) {
+                    if (type == 'Sekolah') {
+                        filterSchool.push(filter);
+                    } else if (type == 'Lokasi') {
+                        filterLocation.push(filter);
                     }
                 }
 
@@ -359,6 +467,10 @@
                 } else if (maxVal < minVal) {
                     sliderMax.value = minVal;
                 }
+
+                minPrice = sliderMin.value;
+                maxPrice = sliderMax.value;
+                showAnjem(getAnjemByFilter());
 
                 const percentMin = ((sliderMin.value - min) / (max - min)) * 100;
                 const percentMax = ((sliderMax.value - min) / (max - min)) * 100;
