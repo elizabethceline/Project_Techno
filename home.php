@@ -92,7 +92,7 @@
 
 <body>
     <?php include 'include/navbar.php'; ?>
-    <section class="bg-neutral-100 w-screen min-h-screen h-fit flex flex-col pt-16 pb-24 lg:py-24 items-center">
+    <section class="bg-neutral-50 w-screen min-h-screen h-fit flex flex-col pt-16 pb-24 lg:py-24 items-center">
         <div class="w-[90%] lg:grid grid-cols-3 gap-6">
             <div class="relative flex flex-col items-stretch mt-2">
                 <h2 class="mb-2">Sekolah</h2>

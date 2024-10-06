@@ -17,7 +17,7 @@
             <img src="https://antarjemputsekolahsurabaya.wordpress.com/wp-content/uploads/2014/12/brosur-antar-jemput-sekolah-surabaya.jpg" alt="" class="w-full h-[260px] brightness-90 ">
         </div>
 
-        <div class="absolute bg-neutral-100 w-screen mt-[230px] rounded-t-[2rem] flex flex-col items-center pt-6 pb-24">
+        <div class="absolute bg-neutral-50 w-screen mt-[230px] rounded-t-[2rem] flex flex-col items-center pt-6 pb-24">
             <div class="w-[90%]">
                 <div class="w-full rounded-2xl bg-[var(--yellow3)] border-[var(--yellow2)] border-2 p-3 flex justify-between items-center">
                     <div class="flex items-center gap-3">
@@ -26,7 +26,7 @@
                     </div>
                     <h1 class="font-semibold">3 / 8</h1>
                 </div>
-                <div class="w-full rounded-2xl bg-neutral-100 border-gray-300 border-[1px] p-3 flex flex-col justify-center mt-4">
+                <div class="w-full rounded-2xl bg-white border-gray-300 border-[1px] p-3 flex flex-col justify-center mt-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-school fa-lg text-[#381b06]"></i>
                         <div class="flex flex-col justify-center">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full rounded-2xl bg-neutral-100 border-gray-300 border-[1px] p-3 flex flex-col justify-center mt-4">
+                <div class="w-full rounded-2xl bg-white border-gray-300 border-[1px] p-3 flex flex-col justify-center mt-4">
                     <div class="flex items-center justify-between gap-3">
                         <div class="flex flex-col justify-center">
                             <h1 class="font-semibold text-xs m-0"><i class="fa-solid fa-user mr-1"></i> Detail Driver</h1>
@@ -60,7 +60,7 @@
                         <img src="assets/img/dargo.png" alt="" class="w-1/3 h-[100px] rounded-2xl">
                     </div>
                 </div>
-                <div class="w-full rounded-2xl bg-neutral-100 border-gray-300 border-[1px] px-3 py-4 flex flex-col justify-center mt-4">
+                <div class="w-full rounded-2xl bg-white border-gray-300 border-[1px] px-3 py-4 flex flex-col justify-center mt-4">
                     <h1 class="font-semibold text-xs m-0"><i class="fa-solid fa-book mr-1"></i> Description</h1>
                     <h1 class=" text-black mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint quisquam odit fugiat ducimus quia quas delectus ipsum accusamus iusto quos. Corporis debitis aliquam in sed ut hic ad distinctio sunt?</h1>
                     <h1 class=" text-black mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam eius nobis earum ipsum architecto delectus sapiente enim suscipit nam, aliquam tempore tempora beatae minus dolorem nulla cupiditate! Inventore, ipsam nemo exercitationem distinctio nam animi culpa provident perferendis natus architecto.</h1>
@@ -69,14 +69,14 @@
         </div>
 
     </section>
-    <div class="bg-neutral-100 fixed bottom-0 z-20 border-gray-300 border-[1px] w-screen flex flex-col items-center justify-center">
+    <div class="bg-white fixed bottom-0 z-20 border-gray-300 border-[1px] w-screen flex flex-col items-center justify-center">
         <!-- <div class="w-[90%] bg-[#80bae0] px-4 py-2 mt-4 rounded-full">
-            <h1 class="text-neutral-100">Harga belum termasuk biaya jasa aplikasi</h1>
+            <h1 class="text-white">Harga belum termasuk biaya jasa aplikasi</h1>
         </div> -->
         <div class="w-[90%] bg-[var(--yellow)] px-4 py-2 my-4 rounded-full flex justify-between items-center">
-            <h1 class="text-neutral-100 font-bold">Book Now!</h1>
+            <h1 class="text-white font-bold">Book Now!</h1>
             <div class="flex items-center gap-2">
-                <h1 class="text-neutral-100 font-bold">Rp500.000</h1>
+                <h1 class="text-white font-bold">Rp500.000</h1>
                 <div class="bg-white w-6 h-6 flex justify-center items-center rounded-full">
                     <i class="fa-solid fa-arrow-right text-[var(--yellow)]"></i>
                 </div>

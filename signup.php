@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <section class="w-screen h-fit min-h-screen py-10 flex flex-col justify-center items-center bg-neutral-100">
+    <section class="w-screen h-fit min-h-screen py-10 flex flex-col justify-center items-center bg-neutral-50">
         <div class="max-w-md sm:max-w-lg relative flex flex-col p-4 rounded-md">
             <div class="title font-bold mb-2 text-center">Join <span class="text-[var(--yellow)]">EduRide</span></div>
             <div class="font-normal mb-4 text-center">Create your account</div>
