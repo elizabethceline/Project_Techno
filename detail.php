@@ -11,8 +11,8 @@
 <body>
     <section class="bg-neutral-100 w-screen min-h-screen h-fit flex flex-col items-center">
         <div class="relative w-full">
-            <div class="absolute bottom-11 left-3 bg-white bg-opacity-95 p-2 rounded-full z-10 shadow-md">
-                <i class="fa-solid fa-arrow-left fa-xl text-neutral-800"></i>
+            <div class="absolute bottom-11 left-4 bg-white bg-opacity-95 w-8 h-8 flex items-center justify-center rounded-full z-10 shadow-md">
+                <i class="fa-solid fa-arrow-left fa-lg text-neutral-800"></i>
             </div>
             <img src="https://antarjemputsekolahsurabaya.wordpress.com/wp-content/uploads/2014/12/brosur-antar-jemput-sekolah-surabaya.jpg" alt="" class="w-full h-[260px] brightness-90 ">
         </div>
