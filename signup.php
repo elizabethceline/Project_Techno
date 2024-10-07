@@ -41,7 +41,7 @@
                 <button type="submit" class="bg-[var(--yellow)] w-full mt-4 m-auto px-6 py-3 rounded-full text-white font-normal">SIGN UP</button>
 
             </form>
-            <div class="text-center mt-[1.6rem]">Don’t have an account yet? <a class="text-[var(--yellow)]" href="#">Sign up for free!</a></div>
+            <div class="text-center mt-[1.6rem]">Already have an account? <a class="text-[var(--yellow)]" href="login.php">Login your account now!</a></div>
         </div>
     </section>
 
