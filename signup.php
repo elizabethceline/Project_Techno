@@ -24,6 +24,11 @@
                 </div>
 
                 <div class="block relative">
+                    <label for="address" class="block text-gray-600 cursor-text leading-[140%] font-normal mb-2">Address</label>
+                    <input type="text" id="address" class="rounded border border-gray-200 w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0">
+                </div>
+
+                <div class="block relative">
                     <label for="email" class="block text-gray-600 cursor-text leading-[140%] font-normal mb-2">Email</label>
                     <input type="email" id="email" class="rounded border border-gray-200 w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0">
                 </div>
