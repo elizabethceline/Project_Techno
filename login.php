@@ -20,7 +20,7 @@
                 </div>
                 <div class="block relative">
                     <label for="password" class="block text-gray-600 cursor-text leading-[140%] font-normal mb-2">Password</label>
-                    <input type="text" id="password" class="rounded border border-gray-200 w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0">
+                    <input type="password" id="password" class="rounded border border-gray-200 w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0">
 
                 </div>
                 <div>
@@ -30,7 +30,7 @@
                 <button type="submit" class="bg-[var(--yellow)] w-full m-auto px-6 py-3 rounded-full text-white font-normal">LOGIN</button>
 
             </form>
-            <div class="text-center mt-[1.6rem]">Don’t have an account yet? <a class="text-[var(--yellow)]" href="#">Sign up for free!</a></div>
+            <div class="text-center mt-[1.6rem]">Don’t have an account yet? <a class="text-[var(--yellow)]" href="signup.php">Sign up for free!</a></div>
         </div>
     </section>
 
