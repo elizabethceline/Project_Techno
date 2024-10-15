@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include 'include/general.php'; ?>
+    <link rel="stylesheet" href="assets/css/general.css">
+
+    <title>EduRide</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
 
     <style>
@@ -91,7 +101,49 @@
 </head>
 
 <body>
-    <?php include 'include/navbar.php'; ?>
+    <header class="header flex flex-col items-center" id="header">
+        <nav class="nav container1 w-[90%] lg:w-full">
+            <a href="#" class="nav__logo">EduRide</a>
+
+            <!-- Nih request uri ngikuti server punten 🙏🙏 -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="home.html" class="nav__link active-link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="myride.html" class="nav__link">
+                            <i class='bx bx-bus nav__icon'></i>
+                            <span class="nav__name">MyRide</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">
+                            <i class='bx bx-conversation nav__icon'></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="profile.html" class="nav__link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Profile</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <img src="assets/img/logo.png" alt="" class="nav__img">
+        </nav>
+    </header>
+
+    <script src="assets/js/navbar.js"></script>
     <section class="bg-neutral-50 w-screen min-h-screen h-fit flex flex-col pt-16 pb-24 lg:py-24 items-center">
         <div class="w-[90%] lg:grid grid-cols-3 gap-6">
             <div class="relative flex flex-col items-stretch mt-2">
@@ -102,7 +154,8 @@
                     <svg class="h-3 w-3 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd"
-                            d="M10 16a1 1 0 01-.707-.293l-8-8a1 1 0 011.414-1.414L10 13.586 16.293 7.293a1 1 0 011.414 1.414l-8 8A1 1 0 0110 16z" clip-rule="evenodd" />
+                            d="M10 16a1 1 0 01-.707-.293l-8-8a1 1 0 011.414-1.414L10 13.586 16.293 7.293a1 1 0 011.414 1.414l-8 8A1 1 0 0110 16z"
+                            clip-rule="evenodd" />
                     </svg>
                 </button>
 
@@ -129,7 +182,8 @@
                     <svg class="h-3 w-3 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd"
-                            d="M10 16a1 1 0 01-.707-.293l-8-8a1 1 0 011.414-1.414L10 13.586 16.293 7.293a1 1 0 011.414 1.414l-8 8A1 1 0 0110 16z" clip-rule="evenodd" />
+                            d="M10 16a1 1 0 01-.707-.293l-8-8a1 1 0 011.414-1.414L10 13.586 16.293 7.293a1 1 0 011.414 1.414l-8 8A1 1 0 0110 16z"
+                            clip-rule="evenodd" />
                     </svg>
                 </button>
 
@@ -163,126 +217,143 @@
             </div>
         </div>
 
-        <div id="list-anjem" class="w-[90%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-6">
+        <div id="list-anjem"
+            class="w-[90%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-6">
         </div>
 
     </section>
 
-    <?php include "include/script.php"; ?>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            corePlugins: {
+                preflight: false,
+            },
+        }
+    </script>
 
     <script>
         const ANJEMS = [{
-                name: 'Antar Jemput XYZ',
-                school: 'SD Kristen Petra 1',
-                location: 'Sambikerep',
-                price: 500000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput ABC',
-                school: 'SMP Gloria 1',
-                location: 'Sukomanunggal',
-                price: 450000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput EFG',
-                school: 'SD Kristen Petra 10',
-                location: 'Sambikerep',
-                price: 500000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput QRS',
-                school: 'SD Kristen Petra 11',
-                location: 'Lakarsantri',
-                price: 600000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput AXZ',
-                school: 'SD Kristen Petra 3',
-                location: 'Tandes',
-                price: 480000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput ASD',
-                school: 'SD Katolik Karitas 1',
-                location: 'Tegalsari',
-                price: 550000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput SMT',
-                school: 'SMP Kristen Petra 3',
-                location: 'Tambaksari',
-                price: 460000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput JKL',
-                school: 'SMA Kristen Petra 5',
-                location: 'Sukolilo',
-                price: 630000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput SKM',
-                school: 'SD Kristen Petra 11',
-                location: 'Lakarsantri',
-                price: 520000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput HSD',
-                school: 'SMA Kristen Petra 3',
-                location: 'Wonocolo',
-                price: 490000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput AHB',
-                school: 'SD Katolik Karitas 3',
-                location: 'Dukuh Pakis',
-                price: 510000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput XLM',
-                school: 'SMA Kristen Gloria 2',
-                location: 'Sukomanunggal',
-                price: 450000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput SGL',
-                school: 'SMA Katolik Karitas 5',
-                location: 'Sukomanunggal',
-                price: 430000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput MSQ',
-                school: 'SMA Kristen Petra 2',
-                location: 'Wonocolo',
-                price: 680000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput TLY',
-                school: 'SMP Kristen Petra 3',
-                location: 'Dukuh Pakis',
-                price: 450000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            },
-            {
-                name: 'Antar Jemput OIS',
-                school: 'SMA Kristen Gloria 2',
-                location: 'Wonokromo',
-                price: 450000,
-                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
-            }
+            name: 'Antar Jemput XYZ',
+            school: 'SD Kristen Petra 1',
+            location: 'Sambikerep',
+            price: 500000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput ABC',
+            school: 'SMP Gloria 1',
+            location: 'Sukomanunggal',
+            price: 450000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput EFG',
+            school: 'SD Kristen Petra 10',
+            location: 'Sambikerep',
+            price: 500000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput QRS',
+            school: 'SD Kristen Petra 11',
+            location: 'Lakarsantri',
+            price: 600000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput AXZ',
+            school: 'SD Kristen Petra 3',
+            location: 'Tandes',
+            price: 480000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput ASD',
+            school: 'SD Katolik Karitas 1',
+            location: 'Tegalsari',
+            price: 550000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput SMT',
+            school: 'SMP Kristen Petra 3',
+            location: 'Tambaksari',
+            price: 460000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput JKL',
+            school: 'SMA Kristen Petra 5',
+            location: 'Sukolilo',
+            price: 630000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput SKM',
+            school: 'SD Kristen Petra 11',
+            location: 'Lakarsantri',
+            price: 520000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput HSD',
+            school: 'SMA Kristen Petra 3',
+            location: 'Wonocolo',
+            price: 490000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput AHB',
+            school: 'SD Katolik Karitas 3',
+            location: 'Dukuh Pakis',
+            price: 510000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput XLM',
+            school: 'SMA Kristen Gloria 2',
+            location: 'Sukomanunggal',
+            price: 450000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput SGL',
+            school: 'SMA Katolik Karitas 5',
+            location: 'Sukomanunggal',
+            price: 430000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput MSQ',
+            school: 'SMA Kristen Petra 2',
+            location: 'Wonocolo',
+            price: 680000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput TLY',
+            school: 'SMP Kristen Petra 3',
+            location: 'Dukuh Pakis',
+            price: 450000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        },
+        {
+            name: 'Antar Jemput OIS',
+            school: 'SMA Kristen Gloria 2',
+            location: 'Wonokromo',
+            price: 450000,
+            img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+        }
         ];
         var filterSchool = [];
         var filterLocation = [];
@@ -333,7 +404,7 @@
                 });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             setupDropdown('Sekolah');
             setupDropdown('Lokasi');
             showAnjem(ANJEMS);
@@ -347,7 +418,7 @@
                             style: 'currency',
                             currency: 'IDR'
                         });
-                        listAnjem.insertAdjacentHTML('beforeend', `<div onclick='window.location="detail.php"'
+                        listAnjem.insertAdjacentHTML('beforeend', `<div onclick='window.location="detail.html"'
                                                     class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
                                                     <div class="relative overflow-hidden bg-cover bg-no-repeat">
                                                         <img
@@ -389,16 +460,16 @@
                 const placeholder = document.getElementById(`dropdownPlaceholder${type}`);
                 const searchInput = document.getElementById(`searchInput${type}`);
 
-                dropdownButton.addEventListener('click', function() {
+                dropdownButton.addEventListener('click', function () {
                     dropdownMenu.classList.toggle('hidden');
                 });
 
-                selectAllCheckbox.addEventListener('change', function() {
+                selectAllCheckbox.addEventListener('change', function () {
                     if (type == 'Sekolah')
                         filterSchool = [];
                     else if (type == 'Lokasi')
                         filterLocation = [];
-                    checkboxes.forEach(function(checkbox) {
+                    checkboxes.forEach(function (checkbox) {
                         checkbox.checked = selectAllCheckbox.checked;
                         if (checkbox.checked) {
                             addFilter(checkbox.parentElement.querySelector('span').textContent.trim());
@@ -410,8 +481,8 @@
                     showAnjem(getAnjemByFilter());
                 });
 
-                checkboxes.forEach(function(checkbox) {
-                    checkbox.addEventListener('change', function() {
+                checkboxes.forEach(function (checkbox) {
+                    checkbox.addEventListener('change', function () {
                         if (!checkbox.checked) {
                             selectAllCheckbox.checked = false;
                             removeFilter(checkbox.parentElement.querySelector('span').textContent.trim());
@@ -459,11 +530,11 @@
                     }
                 }
 
-                searchInput.addEventListener('input', function() {
+                searchInput.addEventListener('input', function () {
                     const filter = searchInput.value.toLowerCase();
                     const labels = dropdownMenu.querySelectorAll('label');
 
-                    labels.forEach(function(label) {
+                    labels.forEach(function (label) {
                         const text = label.textContent.toLowerCase();
                         if (text.includes(filter)) {
                             label.style.display = '';
@@ -473,7 +544,7 @@
                     });
                 });
 
-                document.addEventListener('click', function(event) {
+                document.addEventListener('click', function (event) {
                     if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
                         dropdownMenu.classList.add('hidden');
                     }

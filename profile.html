@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/general.css">
+
+    <title>EduRide</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+
+    <style>
+        @media (max-width: 640px) {
+            .swal-popup {
+                font-size: 14px;
+            }
+
+            .swal-title {
+                font-size: 18px;
+            }
+
+            .swal-content {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header flex flex-col items-center" id="header">
+        <nav class="nav container1 w-[90%] lg:w-full">
+            <a href="#" class="nav__logo">EduRide</a>
+
+            <!-- Nih request uri ngikuti server punten 🙏🙏 -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="home.html" class="nav__link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="myride.html" class="nav__link">
+                            <i class='bx bx-bus nav__icon'></i>
+                            <span class="nav__name">MyRide</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">
+                            <i class='bx bx-conversation nav__icon'></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="profile.html" class="nav__link active-link">
+                            <i class='bx bx-user nav__icon'></i>
+                            <span class="nav__name">Profile</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <img src="assets/img/logo.png" alt="" class="nav__img">
+        </nav>
+    </header>
+
+    <script src="assets/js/navbar.js"></script>
+    <section class="bg-neutral-50 w-screen min-h-screen pt-16 pb-24 flex flex-col items-center">
+        <div class="overflow-hidden max-w-2xl w-full mx-4">
+            <div class="p-4 text-center">
+                <h1 class="text-3xl font-bold">Profile</h1>
+            </div>
+
+            <div class="p-6">
+                <form id="profileForm" class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                        <input type="text" id="fullName"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value="Stefanus William Sudargo" disabled>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value="c14220049@john.petra.ac.id" disabled>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                        <input type="tel" id="phone"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value="089506143551" disabled>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Address</label>
+                        <input type="text" id="address"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value="Surabaya Barat" disabled>
+                    </div>
+
+                    <div id="oldPasswordContainer" class="hidden">
+                        <label class="block text-gray-700 font-semibold mb-2">Old Password</label>
+                        <input type="password" id="oldPassword"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+
+                    <div id="newPasswordContainer" class="hidden">
+                        <label class="block text-gray-700 font-semibold mb-2">New Password</label>
+                        <input type="password" id="newPassword"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" id="editBtn"
+                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">Edit</button>
+                        <button type="submit" id="saveBtn"
+                            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300 hidden">Save</button>
+                        <button type="button" id="cancelBtn"
+                            class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-300 hidden">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            corePlugins: {
+                preflight: false,
+            },
+        }
+    </script>
+    <script>
+        const editBtn = document.getElementById('editBtn');
+        const saveBtn = document.getElementById('saveBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const oldPasswordContainer = document.getElementById('oldPasswordContainer');
+        const newPasswordContainer = document.getElementById('newPasswordContainer');
+        const oldPasswordInput = document.getElementById('oldPassword');
+        const newPasswordInput = document.getElementById('newPassword');
+        const profileForm = document.getElementById('profileForm');
+        const inputs = profileForm.querySelectorAll('input');
+
+        editBtn.addEventListener('click', () => {
+            inputs.forEach(input => input.disabled = false);
+            oldPasswordContainer.classList.remove('hidden');
+            newPasswordContainer.classList.remove('hidden');
+            editBtn.classList.add('hidden');
+            saveBtn.classList.remove('hidden');
+            cancelBtn.classList.remove('hidden');
+        });
+
+        saveBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const oldPassword = oldPasswordInput.value;
+            const newPassword = newPasswordInput.value;
+
+            if (oldPassword !== "") {
+                if (newPassword === "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Please enter your new password!',
+                        customClass: {
+                            popup: 'swal-popup',
+                            title: 'swal-title',
+                            content: 'swal-content',
+                        }
+                    });
+                    return;
+                }
+            }
+
+            if (newPassword !== "") {
+                if (oldPassword === "") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Please enter your old password!',
+                        customClass: {
+                            popup: 'swal-popup',
+                            title: 'swal-title',
+                            content: 'swal-content',
+                        }
+                    });
+                    return;
+                }
+            }
+
+            inputs.forEach(input => input.disabled = true);
+            oldPasswordContainer.classList.add('hidden');
+            newPasswordContainer.classList.add('hidden');
+            editBtn.classList.remove('hidden');
+            saveBtn.classList.add('hidden');
+            cancelBtn.classList.add('hidden');
+            oldPasswordInput.value = "";
+            newPasswordInput.value = "";
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Profile saved successfully!',
+                customClass: {
+                    popup: 'swal-popup',
+                    title: 'swal-title',
+                    content: 'swal-content',
+                }
+            });
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            inputs.forEach(input => input.disabled = true);
+            oldPasswordContainer.classList.add('hidden');
+            newPasswordContainer.classList.add('hidden');
+            editBtn.classList.remove('hidden');
+            saveBtn.classList.add('hidden');
+            cancelBtn.classList.add('hidden');
+            oldPasswordInput.value = "";
+            newPasswordInput.value = "";
+        });
+    </script>
+</body>
+
+</html>

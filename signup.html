@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include 'include/general.php'; ?>
+    <link rel="stylesheet" href="assets/css/general.css">
+
+    <title>EduRide</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/css/tw-elements.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
 </head>
 
 <body>
@@ -43,14 +53,30 @@
                     <input type="password" id="confirm_password" class="rounded border border-gray-200 w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0">
                 </div>
 
-                <button onclick="window.location='login.php'" type="submit" class="bg-[var(--yellow)] w-full mt-4 m-auto px-6 py-3 rounded-full text-white font-normal">SIGN UP</button>
+                <button onclick="window.location='login.html'" type="submit" class="bg-[var(--yellow)] w-full mt-4 m-auto px-6 py-3 rounded-full text-white font-normal">SIGN UP</button>
 
             </div>
-            <div class="text-center mt-[1.6rem]">Already have an account? <a class="text-[var(--yellow)]" href="login.php">Login your account now!</a></div>
+            <div class="text-center mt-[1.6rem]">Already have an account? <a class="text-[var(--yellow)]" href="login.html">Login your account now!</a></div>
         </div>
     </section>
 
-    <?php include 'include/script.php'; ?>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            corePlugins: {
+                preflight: false,
+            },
+        }
+    </script>
 </body>
 
 </html>

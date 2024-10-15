@@ -18,11 +18,27 @@
 
 <body>
     <img src="assets/img/track.png" class="w-screen h-screen" alt="">
-    <a href="myride.php" class="absolute top-4 left-4 bg-white bg-opacity-95 w-10 h-10 flex items-center justify-center rounded-full z-10 shadow-md">
+    <a href="myride.html" class="absolute top-4 left-4 bg-white bg-opacity-95 w-10 h-10 flex items-center justify-center rounded-full z-10 shadow-md">
         <i class="fa-solid fa-arrow-left fa-lg text-neutral-800"></i>
     </a>
 
-    <?php include 'include/script.php'; ?>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            corePlugins: {
+                preflight: false,
+            },
+        }
+    </script>
 </body>
 
 </html>
