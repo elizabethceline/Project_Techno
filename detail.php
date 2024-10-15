@@ -57,7 +57,7 @@
                             <h1 class="font-semibold text-black text-xs m-0">31 tahun</h1>
                             <h1 class="font-semibold text-black text-xs m-0">Pengalaman: 4 tahun</h1>
                         </div>
-                        <img src="assets/img/dargo.png" alt="" class="w-1/3 h-[100px] rounded-2xl">
+                        <img src="assets/img/logo.png" alt="" class="w-1/3 h-[100px] rounded-2xl">
                     </div>
                 </div>
                 <div class="w-full rounded-2xl bg-white border-gray-300 border-[1px] px-3 py-4 flex flex-col justify-center mt-4">

@@ -18,9 +18,9 @@
 
 <body>
     <img src="assets/img/track.png" class="w-screen h-screen" alt="">
-    <div class="absolute top-4 left-4 bg-white bg-opacity-95 w-10 h-10 flex items-center justify-center rounded-full z-10 shadow-md">
+    <a href="myride.php" class="absolute top-4 left-4 bg-white bg-opacity-95 w-10 h-10 flex items-center justify-center rounded-full z-10 shadow-md">
         <i class="fa-solid fa-arrow-left fa-lg text-neutral-800"></i>
-    </div>
+    </a>
 
     <?php include 'include/script.php'; ?>
 </body>

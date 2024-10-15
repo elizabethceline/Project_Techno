@@ -11,7 +11,7 @@
 
 <body>
     <?php include 'include/navbar.php'; ?>
-    <section class="bg-neutral-50 w-screen min-h-screen h-fit flex flex-col pt-16 pb-24 lg:py-24 items-center">
+    <section onclick="window.location = 'track.php'" class="bg-neutral-50 w-screen min-h-screen h-fit flex flex-col pt-16 pb-24 lg:py-24 items-center">
         <div class="w-[90%] flex rounded-lg bg-white text-surface shadow-secondary-1 relative">
             <div class="p-4 w-full">
                 <div class="flex items-center gap-2">

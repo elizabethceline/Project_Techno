@@ -118,21 +118,6 @@
                             class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
                         <span class="ml-3 block truncate text-black whitespace-normal">Select All</span>
                     </label>
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="sekolah[]" value="SD Kristen Petra 1"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">SD Kristen Petra 1</span>
-                    </label>
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="sekolah[]" value="SD Kristen Petra 10"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">SD Kristen Petra 10</span>
-                    </label>
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="sekolah[]" value="SD Kristen Petra 11"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">SD Kristen Petra 11</span>
-                    </label>
                 </div>
             </div>
 
@@ -160,21 +145,6 @@
                             class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
                         <span class="ml-3 block truncate text-black whitespace-normal">Select All</span>
                     </label>
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="lokasi[]" value="Sukomanunggal"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Sukomanunggal</span>
-                    </label>
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="lokasi[]" value="Sambikerep"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Sambikerep</span>
-                    </label>
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" name="lokasi[]" value="Lakarsantri"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Lakarsantri</span>
-                    </label>
                 </div>
             </div>
 
@@ -194,74 +164,6 @@
         </div>
 
         <div id="list-anjem" class="w-[90%] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 mt-6">
-            <!-- <div
-                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
-                <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img
-                        class="rounded-t-lg"
-                        src="https://antarjemputsekolahsurabaya.wordpress.com/wp-content/uploads/2014/12/brosur-antar-jemput-sekolah-surabaya.jpg"
-                        alt="" />
-                </div>
-                <div class="p-2">
-                    <p class="font-bold truncate">
-                        Antar Jemput XYZ
-                    </p>
-                    <p class="text-xs">SD Kristen Petra 1</p>
-                    <p class="font-bold mt-2 text-success">Rp500.000</p>
-                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sambikerep, Lakarsantri</p>
-                </div>
-            </div>
-            <div
-                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
-                <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img
-                        class="rounded-t-lg"
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
-                        alt="" />
-                </div>
-                <div class="p-2">
-                    <p class="font-bold truncate">
-                        Antar Jemput ABC
-                    </p>
-                    <p class="text-xs">SD Kristen Petra 1</p>
-                    <p class="font-bold mt-2 text-success">Rp450.000</p>
-                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sukomanunggal</p>
-                </div>
-            </div>
-            <div
-                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
-                <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img
-                        class="rounded-t-lg"
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
-                        alt="" />
-                </div>
-                <div class="p-2">
-                    <p class="font-bold truncate">
-                        Antar Jemput XYZ
-                    </p>
-                    <p class="text-xs">SD Kristen Petra 1</p>
-                    <p class="font-bold mt-2 text-success">Rp500.000</p>
-                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sambikerep, Lakarsantri</p>
-                </div>
-            </div>
-            <div
-                class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
-                <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img
-                        class="rounded-t-lg"
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg"
-                        alt="" />
-                </div>
-                <div class="p-2">
-                    <p class="font-bold truncate">
-                        Antar Jemput ABC
-                    </p>
-                    <p class="text-xs">SD Kristen Petra 1</p>
-                    <p class="font-bold mt-2 text-success">Rp450.000</p>
-                    <p class="text-xs"><i class="fa-solid fa-location-dot fa-xs"></i> Sukomanunggal</p>
-                </div>
-            </div> -->
         </div>
 
     </section>
@@ -278,7 +180,7 @@
             },
             {
                 name: 'Antar Jemput ABC',
-                school: 'SD Kristen Petra 1',
+                school: 'SMP Gloria 1',
                 location: 'Sukomanunggal',
                 price: 450000,
                 img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
@@ -296,12 +198,140 @@
                 location: 'Lakarsantri',
                 price: 600000,
                 img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput AXZ',
+                school: 'SD Kristen Petra 3',
+                location: 'Tandes',
+                price: 480000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput ASD',
+                school: 'SD Katolik Karitas 1',
+                location: 'Tegalsari',
+                price: 550000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput SMT',
+                school: 'SMP Kristen Petra 3',
+                location: 'Tambaksari',
+                price: 460000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput JKL',
+                school: 'SMA Kristen Petra 5',
+                location: 'Sukolilo',
+                price: 630000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput SKM',
+                school: 'SD Kristen Petra 11',
+                location: 'Lakarsantri',
+                price: 520000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput HSD',
+                school: 'SMA Kristen Petra 3',
+                location: 'Wonocolo',
+                price: 490000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput AHB',
+                school: 'SD Katolik Karitas 3',
+                location: 'Dukuh Pakis',
+                price: 510000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput XLM',
+                school: 'SMA Kristen Gloria 2',
+                location: 'Sukomanunggal',
+                price: 450000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput SGL',
+                school: 'SMA Katolik Karitas 5',
+                location: 'Sukomanunggal',
+                price: 430000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput MSQ',
+                school: 'SMA Kristen Petra 2',
+                location: 'Wonocolo',
+                price: 680000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput TLY',
+                school: 'SMP Kristen Petra 3',
+                location: 'Dukuh Pakis',
+                price: 450000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
+            },
+            {
+                name: 'Antar Jemput OIS',
+                school: 'SMA Kristen Gloria 2',
+                location: 'Wonokromo',
+                price: 450000,
+                img: 'https://tecdn.b-cdn.net/img/new/standard/nature/182.jpg'
             }
         ];
         var filterSchool = [];
         var filterLocation = [];
         var minPrice = 0;
         var maxPrice = 2000000;
+
+        createDropdown('Sekolah');
+        createDropdown('Lokasi');
+
+        function createDropdown(type) {
+            const dropdownMenu = document.getElementById(`dropdownMenu${type}`);
+            var uniqueType;
+            if (type == 'Lokasi')
+                uniqueType = ANJEMS.reduce((acc, current) => {
+                    const x = acc.find(item => item.location == current.location);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+            else if (type == 'Sekolah')
+                uniqueType = ANJEMS.reduce((acc, current) => {
+                    const x = acc.find(item => item.location == current.location);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+
+            if (type == 'Sekolah')
+                uniqueType.forEach(unique => {
+                    dropdownMenu.insertAdjacentHTML('beforeend', `<label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
+                        <input type="checkbox" name="sekolah[]" value="${unique.school}"
+                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
+                        <span class="ml-3 block truncate text-black whitespace-normal">${unique.school}</span>
+                    </label>`);
+                });
+
+            else if (type == 'Lokasi')
+                uniqueType.forEach(unique => {
+                    dropdownMenu.insertAdjacentHTML('beforeend', `<label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
+                        <input type="checkbox" name="lokasi[]" value="${unique.location}"
+                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
+                        <span class="ml-3 block truncate text-black whitespace-normal">${unique.location}</span>
+                    </label>`);
+                });
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
             setupDropdown('Sekolah');
@@ -317,7 +347,7 @@
                             style: 'currency',
                             currency: 'IDR'
                         });
-                        listAnjem.insertAdjacentHTML('beforeend', `<div
+                        listAnjem.insertAdjacentHTML('beforeend', `<div onclick='window.location="detail.php"'
                                                     class="block max-w-[18rem] rounded-lg bg-white text-surface shadow-secondary-1">
                                                     <div class="relative overflow-hidden bg-cover bg-no-repeat">
                                                         <img
@@ -339,8 +369,8 @@
             function getAnjemByFilter() {
                 console.log(filterSchool);
                 console.log(filterLocation);
-                
-                
+
+
                 return ANJEMS.filter(anjem => {
                     const schoolMatches = filterSchool.length > 0 ? filterSchool.includes(anjem.school) : true;
                     const locationMatches = filterLocation.length > 0 ? filterLocation.includes(anjem.location) : true;
@@ -364,9 +394,9 @@
                 });
 
                 selectAllCheckbox.addEventListener('change', function() {
-                    if (type == 'Sekolah') 
+                    if (type == 'Sekolah')
                         filterSchool = [];
-                    else if (type == 'Lokasi') 
+                    else if (type == 'Lokasi')
                         filterLocation = [];
                     checkboxes.forEach(function(checkbox) {
                         checkbox.checked = selectAllCheckbox.checked;
