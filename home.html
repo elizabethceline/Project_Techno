@@ -191,12 +191,6 @@
                         <input id="searchInputSekolah" type="text" placeholder="Search..."
                             class="w-full border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[var(--yellow)]">
                     </div>
-
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" value="stroke" id="selectAllSekolah"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Select All</span>
-                    </label>
                 </div>
             </div>
 
@@ -219,12 +213,6 @@
                         <input id="searchInputLokasi" type="text" placeholder="Search..."
                             class="w-full border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-1 focus:ring-[var(--yellow)]">
                     </div>
-
-                    <label class="relative pl-8 py-2 flex items-center cursor-pointer hover:bg-gray-100">
-                        <input type="checkbox" value="stroke" id="selectAllLokasi"
-                            class="absolute left-2 h-4 w-4 text-[var(--yellow)] border-gray-300 rounded focus:ring-[var(--yellow)]">
-                        <span class="ml-3 block truncate text-black whitespace-normal">Select All</span>
-                    </label>
                 </div>
             </div>
 
@@ -250,7 +238,7 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
 
     <script>
         const ANJEMS = [{
@@ -475,36 +463,32 @@
                     dropdownMenu.classList.toggle('hidden');
                 });
 
-                selectAllCheckbox.addEventListener('change', function () {
-                    if (type == 'Sekolah')
-                        filterSchool = [];
-                    else if (type == 'Lokasi')
-                        filterLocation = [];
-                    checkboxes.forEach(function (checkbox) {
-                        checkbox.checked = selectAllCheckbox.checked;
-                        if (checkbox.checked) {
-                            addFilter(checkbox.parentElement.querySelector('span').textContent.trim());
-                        } else {
-                            removeFilter(checkbox.parentElement.querySelector('span').textContent.trim());
-                        }
-                    });
-                    updatePlaceholder();
-                    showAnjem(getAnjemByFilter());
-                });
-
                 checkboxes.forEach(function (checkbox) {
                     checkbox.addEventListener('change', function () {
-                        if (!checkbox.checked) {
-                            selectAllCheckbox.checked = false;
-                            removeFilter(checkbox.parentElement.querySelector('span').textContent.trim());
-                        } else if (Array.from(checkboxes).every(i => i.checked)) {
-                            selectAllCheckbox.checked = true;
+                        if (checkbox.checked) {
+                            checkboxes.forEach(function (otherCheckbox) {
+                                if (otherCheckbox !== checkbox) {
+                                    otherCheckbox.checked = false;
+                                }
+                            });
+
+                            if (type == 'Sekolah') {
+                                filterSchool = [checkbox.parentElement.querySelector('span').textContent.trim()];
+                            } else if (type == 'Lokasi') {
+                                filterLocation = [checkbox.parentElement.querySelector('span').textContent.trim()];
+                            }
                         } else {
-                            addFilter(checkbox.parentElement.querySelector('span').textContent.trim());
+                            if (type == 'Sekolah') {
+                                filterSchool = [];
+                            } else if (type == 'Lokasi') {
+                                filterLocation = [];
+                            }
                         }
+
                         updatePlaceholder();
                         showAnjem(getAnjemByFilter());
                     });
+
                 });
 
                 function updatePlaceholder() {
