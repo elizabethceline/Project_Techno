@@ -44,11 +44,27 @@
 </head>
 
 <body>
-    <img src="assets/img/track.png" class="w-screen h-[100svh]" alt="">
+    <div class="relative w-screen h-[100svh]">
+        <img src="assets/img/track.png" class="absolute w-full h-full object-cover" alt="">
+        <div class="absolute inset-0 bg-black bg-opacity-10 "></div>
+    </div>
     <a href="myride.html"
-        class="absolute top-4 left-4 bg-white bg-opacity-95 w-10 h-10 flex items-center justify-center rounded-full z-10 shadow-md">
+        class="absolute top-5 left-4 bg-white bg-opacity-95 w-10 h-10 flex items-center justify-center rounded-full z-10 shadow-md">
         <i class="fa-solid fa-arrow-left fa-lg text-neutral-800"></i>
     </a>
+    <div
+        class="absolute top-4 right-4 w-auto rounded-2xl bg-white backdrop-blur-sm border-gray-300 border-[1px] p-3 flex flex-col justify-center">
+        <div class="flex items-center justify-between">
+            <div class="flex flex-col justify-center">
+                <h1 class="font-semibold text-xs m-0"><i class="fa-solid fa-user mr-1"></i> Detail Driver
+                </h1>
+                <h1 class="font-bold text-black mt-2">Budi Sutanto</h1>
+                <h1 class="font-semibold text-black text-xs m-0">082125252838</h1>
+            </div>
+            <img src="https://bin-group.co.id/wp-content/uploads/2022/11/Yayasan-Outsourcing-Jasa-Driver-Sopir-Surabaya-Jawa-Timur-1024x681.jpg"
+                alt="" class="w-1/2 h-[100px] rounded-2xl">
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/js/tw-elements.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
